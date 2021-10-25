@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light lamp</title>
+    <style>
+        body {
+            background-color: black;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .container {
+            height: 350px;
+            width: 350px;
+            overflow: hidden;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+
+        .lamp {
+            height: 30px;
+            width: 140px;
+            background-color: rgb(37, 168, 255);
+            position: absolute;
+            bottom: 0px;
+            right: 15px;
+
+        }
+
+        .lamp::before {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 60px;
+            background-color: rgba(255, 255, 255, 0.5);
+            top: 8px;
+            border-radius: 8px;
+        }
+
+        .stand {
+            height: 120px;
+            width: 12px;
+            background-color: rgb(229, 190, 255);
+            position: absolute;
+            top: -110px;
+            right: 35px;
+            transform: rotate(20deg);
+            z-index: -1;
+        }
+
+        .stand::before {
+            content: "";
+            height: 140px;
+            width: 12px;
+            background-color: rgb(229, 190, 255);
+            position: absolute;
+            bottom: 85px;
+            right: 56px;
+            transform: rotate(-60deg);
+
+        }
+
+        .stand::after {
+            content: "";
+            height: 25px;
+            width: 25px;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            border-radius: 85%;
+            left: -7px;
+            bottom: 105px;
+        }
+
+        .bulb {
+            height: 50px;
+            width: 100px;
+            background-color: rgb(0, 204, 255);
+            position: absolute;
+            bottom: 205px;
+            border-radius: 58px 58px 0px 0px;
+            transform: rotate(45deg);
+            left: -45px;
+
+        }
+
+        .bulb::before {
+            content: "";
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            left: 45px;
+            top: -15px;
+        }
+
+        .bulb::after {
+            content: "";
+            position: absolute;
+            background-color: lightblue;
+            height: 10px;
+            width: 110px;
+            border-radius: 5px;
+            top: 45px;
+            right: -5px;
+        }
+
+        input[type="checkbox"] {
+
+            height: 12px;
+            width: 25px;
+            position: absolute;
+            background-color: white;
+            bottom: 26px;
+            left: 15px;
+            border-radius: 3px 3px 0px 0px;
+            z-index: -1;
+            outline: none;
+        }
+
+        input[type="checkbox"]::before {
+            content: "";
+            position: absolute;
+            height: 569px;
+            width: 73px;
+            border-bottom: 300px solid rgba(187, 255, 1, 0.5);
+            border-left: 45px solid transparent;
+            border-right: 45px solid transparent;
+            bottom: -136px;
+            transform: rotate(45deg);
+            display: none;
+        }
+
+        input[type="checkbox"]:checked {
+            height: 8px;
+        }
+
+       input[type="checkbox"]:checked:before {
+            display: block;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="lamp">
+            <div class="stand"></div>
+            <div class="bulb"></div>
+            <input type="checkbox">
+        </div>
+    </div>
+</body>
+
+</html>
